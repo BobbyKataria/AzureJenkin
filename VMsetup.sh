@@ -42,8 +42,8 @@ az network nic create --resource-group JenkinsGroup --name JenkinsNICc --vnet-na
 
 #creating the VM's
 
-az vm create -g JenkinsGroup -n JenkinsHostVM --image UbuntuLTS --nics JenkinsNIC1 --size Standard_B1ls
+az vm create -g JenkinsGroup -n JenkinsHostVM --image UbuntuLTS --nics JenkinsNICa --size Standard_B1ls
 
-az vm create -g JenkinsGroup -n JenkinsSlaveVM --image UbuntuLTS --nics JenkinsNIC2 --size Standard_B1ls
+az vm create -g JenkinsGroup -n JenkinsSlaveVM --image UbuntuLTS --nics JenkinsNICb --size Standard_B1ls
 
-az vm create -g JenkinsGroup -n PythonServerVM --image UbuntuLTS --nics JenkinsNIC3 --size Standard_B1ls
+az vm create -g JenkinsGroup -n PythonServerVM --image UbuntuLTS --nics JenkinsNICc --size Standard_B1ls
