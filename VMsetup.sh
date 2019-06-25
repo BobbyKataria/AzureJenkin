@@ -28,17 +28,17 @@ az network nsg rule create -g JenkinsGroup --name SSH --destination-port-ranges 
 
 #Creating public ip
 
-az network public-ip create --resource-group JenkinsGroup --name JenkinsIP1 --dns-name dnsname --allocation-method Static
-az network public-ip create --resource-group JenkinsGroup --name JenkinsIP2 --dns-name dnsname --allocation-method Static
-az network public-ip create --resource-group JenkinsGroup --name JenkinsIP3 --dns-name dnsname --allocation-method Static
+az network public-ip create --resource-group JenkinsGroup --name JenkinsIPa --dns-name dnsnamea --allocation-method Static
+az network public-ip create --resource-group JenkinsGroup --name JenkinsIPb --dns-name dnsnameb --allocation-method Static
+az network public-ip create --resource-group JenkinsGroup --name JenkinsIPc --dns-name dnsnamec --allocation-method Static
 
 
 
 #Creating the nic
 
-az network nic create --resource-group JenkinsGroup --name JenkinsNIC1 --vnet-name JenkinsVirtualNetwork --subnet JenkinsSubnet --network-security-group JenkinsNSG --public-ip-address JenkinsIP
-az network nic create --resource-group JenkinsGroup --name JenkinsNIC2 --vnet-name JenkinsVirtualNetwork --subnet JenkinsSubnet --network-security-group JenkinsNSG --public-ip-address JenkinsIP
-az network nic create --resource-group JenkinsGroup --name JenkinsNIC3 --vnet-name JenkinsVirtualNetwork --subnet JenkinsSubnet --network-security-group JenkinsNSG --public-ip-address JenkinsIP
+az network nic create --resource-group JenkinsGroup --name JenkinsNICa --vnet-name JenkinsVirtualNetwork --subnet JenkinsSubnet --network-security-group JenkinsNSG --public-ip-address JenkinsIPa
+az network nic create --resource-group JenkinsGroup --name JenkinsNICb --vnet-name JenkinsVirtualNetwork --subnet JenkinsSubnet --network-security-group JenkinsNSG --public-ip-address JenkinsIPb
+az network nic create --resource-group JenkinsGroup --name JenkinsNICc --vnet-name JenkinsVirtualNetwork --subnet JenkinsSubnet --network-security-group JenkinsNSG --public-ip-address JenkinsIPc
 
 #creating the VM's
 
