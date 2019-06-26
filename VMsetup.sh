@@ -20,7 +20,7 @@ az network nsg rule create --resource-group JenkinsGroup --name SSH --priority 5
 
 #Selecting our ports
 
-az network nsg rule create -g JenkinsGroup --name SSH --destination-port-ranges 22 --nsg-name JenkinsNSG --priority 400
+az network nsg rule create -g JenkinsGroup --name SSH --destination-port-ranges 22 --nsg-name JenkinsNSG --priority 100
 
 #Creating public ip
 
