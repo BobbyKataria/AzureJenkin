@@ -38,8 +38,8 @@ az network nic create --resource-group JenkinsGroup --name JenkinsNICc --vnet-na
 
 #creating the VM's
 
-az vm create -g JenkinsGroup -n JenkinsHostVM --image UbuntuLTS --nics JenkinsNICa --size Standard_B1ls --generate-ssh-keygen
+az vm create -g JenkinsGroup -n JenkinsHostVM --image UbuntuLTS --nics JenkinsNICa --size Standard_B1ls --generate-ssh-keys
 
-az vm create -g JenkinsGroup -n JenkinsSlaveVM --image UbuntuLTS --nics JenkinsNICb --size Standard_B1ls --generate-ssh-keygen
+az vm create -g JenkinsGroup -n JenkinsSlaveVM --image UbuntuLTS --nics JenkinsNICb --size Standard_B1ls --generate-ssh-keys
 
-az vm create -g JenkinsGroup -n PythonServerVM --image UbuntuLTS --nics JenkinsNICc --size Standard_B1ls --generate-ssh-keygen
+az vm create -g JenkinsGroup -n PythonServerVM --image UbuntuLTS --nics JenkinsNICc --size Standard_B1ls --generate-ssh-keys
