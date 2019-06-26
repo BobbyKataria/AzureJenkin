@@ -16,11 +16,13 @@ az network nsg create -g JenkinsGroup -n JenkinsNSG
 
 #Creating the rules in our nsg
 
-az network nsg rule create --resource-group JenkinsGroup --name SSH --priority 500 --nsg-name JenkinsNSG
+az network nsg rule create --resource-group JenkinsGroup --name SSH --priority 100 --nsg-name JenkinsNSG
 
 #Selecting our ports
 
 az network nsg rule create -g JenkinsGroup --name SSH --destination-port-ranges 22 --nsg-name JenkinsNSG --priority 100
+az network nsg rule create -g JenkinsGroup --name HTTP --destination-port-ranges 8080 --nsg-name JenkinsNSG --priority 200
+az network nsg rule create -g JenkinsGroup --name Python --destination-port-ranges 1337 --nsg-name JenkinsNSG --priority 300
 
 #Creating public ip
 
