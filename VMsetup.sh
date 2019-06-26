@@ -10,10 +10,6 @@ az network vnet create -g JenkinsGroup -n JenkinsVirtualNetwork --address-prefix
 
 az network vnet subnet create -g JenkinsGroup  --vnet-name JenkinsVirtualNetwork --name JenkinsSubnet --address-prefixes 10.0.0.0/24
 
-#Creating our virtual machine
-
-az vm create -g JenkinsGroup -n VirtualMachineGroup --image UbuntuLTS --admin-username azureuser --generate-ssh-keys
-
 #Creating the nsg
 
 az network nsg create -g JenkinsGroup -n JenkinsNSG
@@ -42,8 +38,8 @@ az network nic create --resource-group JenkinsGroup --name JenkinsNICc --vnet-na
 
 #creating the VM's
 
-az vm create -g JenkinsGroup -n JenkinsHostVM --image UbuntuLTS --nics JenkinsNICa --size Standard_B1ls
+az vm create -g JenkinsGroup -n JenkinsHostVM --image UbuntuLTS --nics JenkinsNICa --size Standard_B1ls --generate-ssh-keygen
 
-az vm create -g JenkinsGroup -n JenkinsSlaveVM --image UbuntuLTS --nics JenkinsNICb --size Standard_B1ls
+az vm create -g JenkinsGroup -n JenkinsSlaveVM --image UbuntuLTS --nics JenkinsNICb --size Standard_B1ls --generate-ssh-keygen
 
-az vm create -g JenkinsGroup -n PythonServerVM --image UbuntuLTS --nics JenkinsNICc --size Standard_B1ls
+az vm create -g JenkinsGroup -n PythonServerVM --image UbuntuLTS --nics JenkinsNICc --size Standard_B1ls --generate-ssh-keygen
